@@ -1,0 +1,37 @@
+{
+  "name": "editor-timeline",
+  "version": "0.0.0",
+  "description": "timeline for multimedia editors",
+  "main": "index.js",
+  "dependencies": {
+    "brfs": "~1.0.0",
+    "class-list": "~0.1.1",
+    "domify": "~1.2.2",
+    "inherits": "~2.0.1"
+  },
+  "devDependencies": {
+    "tape": "~2.3.2"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/editor-timeline.git"
+  },
+  "homepage": "https://github.com/substack/editor-timeline",
+  "keywords": [
+    "timeline",
+    "multimedia",
+    "editor",
+    "player",
+    "browser",
+    "ui"
+  ],
+  "author": {
+    "name": "James Halliday",
+    "email": "mail@substack.net",
+    "url": "http://substack.net"
+  },
+  "license": "MIT"
+}
