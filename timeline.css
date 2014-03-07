@@ -1,0 +1,54 @@
+.editor-timeline {
+  background-color: rgb(50,50,50);
+  border: 1px solid white;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 45px;
+  overflow-x: scroll;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.editor-timeline .cursor {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  padding-left: 2px;
+  border-left-width: 2px;
+  border-left-color: rgb(127,127,127);
+  border-left-style: solid;
+  color: rgb(127,127,127);
+}
+
+.editor-timeline .cursor.active {
+  border-left-color: white;
+  color: white;
+}
+
+.editor-timeline .mark {
+  cursor: hand;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(180,20,240);
+}
+
+.editor-timeline .mark:hover {
+  background-color: rgb(220,80,220);
+}
+
+.editor-timeline .mark.active {
+  background-color: rgb(140,240,20);
+}
+
+.editor-timeline .mark.dragging {
+  cursor: move;
+}

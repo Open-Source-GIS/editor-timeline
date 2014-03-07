@@ -3,6 +3,10 @@ var classList = require('class-list');
 var Mark = require('./lib/mark.js');
 var inherits = require('inherits');
 var EventEmitter = require('events').EventEmitter;
+var insertCss = require('insert-css');
+var fs = require('fs');
+
+insertCss(fs.readFileSync(__dirname + '/timeline.css', 'utf8'));
 
 module.exports = Timeline;
 inherits(Timeline, EventEmitter);
@@ -11,6 +15,7 @@ function Timeline (pxps) {
     var self = this;
     if (!(this instanceof Timeline)) return new Timeline(pxps);
     var div = this.element = document.createElement('div');
+    classList(div).add('editor-timeline');
     div.style.height = '100%';
     div.style.minWidth = (pxps * 60 * 2) + 'px';
     
@@ -136,10 +141,13 @@ Timeline.prototype._findNearest = function (x) {
 
 Timeline.prototype._setNearest = function (sec) {
     var i = this._findNearest(sec);
-    var cmp = this._current !== i;
+    var prev = this._current;
     this._current = i;
-    if (cmp) {
+    if (prev !== i) {
         var m = this.marks[i];
+        var p = this.marks[this._current];
+        if (!m) return;
+        if (p) classList(p.element).remove('active');
         classList(m.element).add('active');
         this._activeMark = m.id;
         this.emit('show', this.marks[i], i);
