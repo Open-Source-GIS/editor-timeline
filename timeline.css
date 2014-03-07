@@ -1,11 +1,9 @@
 .editor-timeline {
+  position: relative;
   background-color: rgb(50,50,50);
   border: 1px solid white;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  height: 45px;
+  height: 100%;
+  width: 100%;
   overflow-x: scroll;
   -moz-user-select: none;
   -khtml-user-select: none;
