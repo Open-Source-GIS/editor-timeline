@@ -1,6 +1,6 @@
-var cursor = require('./cursor.js');
+var cursor = require('./lib/cursor.js');
 var classList = require('class-list');
-var Mark = require('./mark.js');
+var Mark = require('./lib/mark.js');
 var inherits = require('inherits');
 var EventEmitter = require('events').EventEmitter;
 
